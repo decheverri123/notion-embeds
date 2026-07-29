@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 2: Treble Clef Fluency and Speed</title>
+<script src="https://cdn.jsdelivr.net/npm/abcjs@6.6.4/dist/abcjs-basic-min.js"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 16px; color: #222; background: #fafafa; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  h2 { font-size: 16px; margin-top: 24px; }
+  p { font-size: 14px; line-height: 1.5; }
+  .score { background: white; padding: 12px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin: 10px 0 16px; }
+  button { font-size: 14px; padding: 6px 12px; border-radius: 6px; border: 1px solid #333; background: #333; color: white; cursor: pointer; }
+  button:disabled { opacity: 0.5; cursor: default; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+
+<h1>Lesson 2: Treble Clef Fluency and Speed</h1>
+<p><small>Standard notation with machine-generated guitar tab. Tap Play to hear each example.</small></p>
+
+<h2>1. Line notes: E, G, B, D, F</h2>
+<div id="score1" class="score"></div>
+<button id="play1">Play</button>
+
+<h2>2. Space notes: F, A, C, E</h2>
+<div id="score2" class="score"></div>
+<button id="play2">Play</button>
+
+<h2>3. Mixed melody in C major (line + space notes)</h2>
+<div id="score3" class="score"></div>
+<button id="play3">Play</button>
+
+<h2>4. Speed drill: C major scale up and down</h2>
+<div id="score4" class="score"></div>
+<button id="play4">Play</button>
+
+<script>
+  const examples = [
+    {
+      id: "score1",
+      btn: "play1",
+      abc: `X:1
+T:Line notes E G B D F
+M:4/4
+L:1/4
+Q:1/4=90
+K:C
+"E"E "G"G "B"B "D"d | "F"f4 |]`
+    },
+    {
+      id: "score2",
+      btn: "play2",
+      abc: `X:1
+T:Space notes F A C E
+M:4/4
+L:1/4
+Q:1/4=90
+K:C
+"F"F "A"A "C"c "E"e |]`
+    },
+    {
+      id: "score3",
+      btn: "play3",
+      abc: `X:1
+T:Twinkle-style melody in C
+M:4/4
+L:1/4
+Q:1/4=100
+K:C
+C C G G | A A G2 | F F E E | D D C2 |]`
+    },
+    {
+      id: "score4",
+      btn: "play4",
+      abc: `X:1
+T:C major scale
+M:4/4
+L:1/8
+Q:1/4=110
+K:C
+CDEF GABc | cBAG FEDC |]`
+    }
+  ];
+
+  const rendered = examples.map(ex => {
+    const visual = ABCJS.renderAbc(ex.id, ex.abc, {
+      responsive: "resize",
+      add_classes: true,
+      tablature: [{ instrument: "guitar" }]
+    });
+    return { ex, visual };
+  });
+
+  async function playExample(idx) {
+    const { ex, visual } = rendered[idx];
+    const btn = document.getElementById(ex.btn);
+    btn.disabled = true;
+    btn.textContent = "Loading...";
+    try {
+      const synth = new ABCJS.synth.CreateSynth();
+      await synth.init({ visualObj: visual[0] });
+      await synth.prime();
+      btn.textContent = "Playing";
+      await synth.start();
+      setTimeout(() => { btn.textContent = "Play"; btn.disabled = false; }, 4000);
+    } catch (e) {
+      btn.textContent = "Audio unavailable in this view";
+    }
+  }
+
+  examples.forEach((ex, i) => {
+    document.getElementById(ex.btn).addEventListener("click", () => playExample(i));
+  });
+</script>
+
+</body>
+</html>
