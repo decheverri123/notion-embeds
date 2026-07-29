@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 3: Bass Clef Fluency</title>
+<script src="https://cdn.jsdelivr.net/npm/abcjs@6.6.4/dist/abcjs-basic-min.js"></script>
+<style>
+  :root {
+    --bg: #fafafa;
+    --card: #ffffff;
+    --ink: #1f2430;
+    --muted: #55606d;
+    --accent: #4a6cf7;
+    --accent-2: #7c5cff;
+    --warm: #f4a261;
+    --safe: #2a9d8f;
+    --shadow: 0 6px 24px rgba(20, 25, 40, 0.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 64px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 28px 22px;
+    margin-bottom: 20px;
+  }
+  .hero {
+    background: linear-gradient(135deg, #eef2ff 0%, #f3ecff 100%);
+  }
+  .hero .eyebrow {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .hero h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+  .hero p { margin: 6px 0 0; color: var(--muted); }
+  h2 {
+    font-size: 22px;
+    margin: 0 0 14px;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+  }
+  h3 {
+    font-size: 17px;
+    margin: 18px 0 8px;
+    color: var(--ink);
+  }
+  p, li { font-size: 16px; }
+  figure {
+    margin: 16px 0;
+    text-align: center;
+  }
+  figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+  figcaption {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .callout {
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 15px;
+  }
+  .callout.try { background: #fff5e6; border: 1px solid #fbd8a0; }
+  .callout.safe { background: #e6f6f3; border: 1px solid #a7d8ce; }
+  .callout.self { background: #eef2ff; border: 1px solid #c8d3ff; }
+  .callout strong { display: block; margin-bottom: 4px; }
+  ol, ul { padding-left: 22px; }
+  ol li, ul li { margin: 6px 0; }
+  .abc-example {
+    margin: 14px 0 6px;
+    padding: 12px;
+    background: #f6f7fb;
+    border-radius: 10px;
+  }
+  .play-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .play-btn[disabled] { background: #b8bfd1; cursor: not-allowed; }
+  details {
+    background: #f6f7fb;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 10px 0;
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  details[open] summary { margin-bottom: 8px; }
+  .divider {
+    height: 1px;
+    background: #e6e8ef;
+    margin: 20px 0;
+    border: none;
+  }
+  .nudge {
+    font-style: italic;
+    color: var(--accent-2);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="card hero">
+    <p class="eyebrow">Weekly Lesson 3</p>
+    <h1>Bass Clef Fluency</h1>
+    <p>Welcome back, Danny. Last week we drilled treble clef speed. This week we bring the low staff up to that same level so the whole grand staff starts to feel like one instrument on the page.</p>
+  </section>
+
+  <!-- VISUAL DIAGRAMS -->
+  <section class="card">
+    <h2>Visual Diagrams</h2>
+    <p>Two pictures to keep next to your keyboard this week. The first shows the piano with both clefs mapped onto the keys, so you can literally point at middle C and watch how it hands off between the staves. The second is the treble reference from last week, kept close so the bass names below feel like the mirror image, not a new alphabet.</p>
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Piano_keyboard_and_clefs.svg/330px-Piano_keyboard_and_clefs.svg.png" alt="Piano keyboard with treble and bass clefs labeled onto the keys">
+      <figcaption>Both clefs mapped onto the piano. Middle C sits right between them.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Treble_Clef_Notes.JPG/330px-Treble_Clef_Notes.JPG" alt="Treble clef note names on the staff">
+      <figcaption>Treble clef, for cross-reference. Bass clef names will feel like a shifted echo of these.</figcaption>
+    </figure>
+  </section>
+
+  <!-- THEORY LESSON -->
+  <section class="card">
+    <h2>Theory Lesson (about 20 minutes)</h2>
+
+    <h3>Quick recall</h3>
+    <p>Last week, treble clef lines were E G B D F and spaces spelled F A C E. You drilled naming notes cold and started to feel the shapes rather than count them. Hold onto that habit, because you are about to build the same habit in a new neighborhood.</p>
+
+    <h3>Meet the bass clef</h3>
+    <p>The bass clef (also called the F clef) is the low staff on the piano and the home of the bass guitar, cello, trombone, and your left hand. The two dots of the symbol wrap around the F line, so the second line from the top is always F. That is the anchor. Everything else grows out of it.</p>
+    <p>Reading from the bottom line up, the lines are G, B, D, F, A. A friendly mnemonic: "Good Boys Do Fine Always." The spaces, again from the bottom, are A, C, E, G, which spells "All Cows Eat Grass." Middle C lives on the first ledger line above the bass staff, and also on the first ledger line below the treble staff. Same note, two homes. That shared note is the hinge of the grand staff.</p>
+
+    <h3>Worked example on piano</h3>
+    <p>Sit at the keyboard, find middle C with your right thumb, then slide your left thumb one octave lower to the C below. Play these bass clef notes one at a time and say the name out loud as you play: C, E, G, B, D. You are walking up the bottom of a C major scale plus a couple of extras. Notice how the low G you played is exactly the bottom line of the bass staff.</p>
+
+    <h3>Worked example on guitar</h3>
+    <p>On guitar we usually read treble clef, but every bass clef note maps directly to the low strings. The open 6th string (low E) sits on the bottom space of the bass clef. The open 5th string (A) is the top space. The open 4th string (D) is the middle line. So when you see a bass clef in a piano score, you can find those pitches on your bottom three strings without a capo. Try playing E, A, D open, then fret G on the low E string (3rd fret) and C on the A string (3rd fret). You have just voiced the first half of "All Cows Eat Grass" in real time.</p>
+
+    <h3>Sheet music examples</h3>
+    <p>Example 1 walks up the lines of the bass clef (G, B, D, F, A) and then walks up the spaces (A, C, E, G). Play the recording, then read it silently and say each name out loud before checking yourself with the audio.</p>
+    <div class="abc-example">
+      <div id="abc-1"></div>
+      <button class="play-btn" data-play="ex1">Play example</button>
+    </div>
+
+    <p>Example 2 climbs from the bottom of the bass staff through middle C and up onto the treble staff. Watch how the ledger line C connects the two worlds. This is the single most important sight-reading pattern in all of piano music.</p>
+    <div class="abc-example">
+      <div id="abc-2"></div>
+      <button class="play-btn" data-play="ex2">Play example</button>
+    </div>
+
+    <p>Example 3 is a two-measure left-hand pattern in C major that you can loop with your right hand playing chords on top later. Once your eyes trust the low staff, patterns like this stop feeling like "another line to read" and start feeling like an accompaniment you already hear.</p>
+    <div class="abc-example">
+      <div id="abc-3"></div>
+      <button class="play-btn" data-play="ex3">Play example</button>
+    </div>
+
+    <h3>Exercises for the week</h3>
+    <ol>
+      <li>Set a timer for 60 seconds. Point at any note on the bass staff, name it, move on. Aim for 30 correct names in a row without hesitation by Friday.</li>
+      <li>Play a slow bass clef C major scale (C to C, one octave) with your left hand while saying each note name aloud.</li>
+      <li>Take a piano piece you already like (a hymn, a pop ballad, anything with two hands) and read only the bass clef line, slowly. Ignore the treble entirely for 5 minutes.</li>
+      <li>On guitar, play the open low E, A, D and say "bottom space, top space, middle line." Wire the picture and the sound together.</li>
+    </ol>
+
+    <div class="callout self">
+      <strong>Ear-training rep (2 to 3 minutes)</strong>
+      Sing the interval of a perfect fifth, low to high, using the first two notes of "Twinkle, Twinkle." Then find that same interval on the low strings of the guitar (open E to open B on the 5th string's 2nd fret) or on the piano (low C to G). Sing, then check. Sing, then check.
+    </div>
+
+    <div class="callout try">
+      <strong>Try this week</strong>
+      Pick one song you are working on or writing. Rewrite the melody's first phrase in bass clef (transpose it down an octave if you need to). Reading it in the new clef will lock the note names in faster than any flashcard drill.
+    </div>
+  </section>
+
+  <!-- CIRCLE OF FIFTHS -->
+  <section class="card">
+    <h2>Circle of Fifths</h2>
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Music_Scale_Theory_-_Circle_of_Fifths.png/330px-Music_Scale_Theory_-_Circle_of_Fifths.png" alt="Circle of fifths diagram">
+      <figcaption>The full wheel. C sits at the top with zero sharps or flats. Go clockwise for sharps, counterclockwise for flats.</figcaption>
+    </figure>
+    <p>Two rules to keep glued to the front of your brain: clockwise adds sharps in the order F C G D A E B, and counterclockwise adds flats in the order B E A D G C F (the same letters, reversed).</p>
+
+    <h3>This week's drill: Neighbors are your chords</h3>
+    <p>Every key on the circle has two next-door neighbors, and those neighbors are secretly the two most important chords in that key. The neighbor one step clockwise is your V (dominant, the tension chord). The neighbor one step counterclockwise is your IV (subdominant, the "gospel" chord). Together with your I, they are almost every rock, country, and folk song ever written.</p>
+    <p>Try it: G is your I. Look at the wheel. One click clockwise from G is D (that's your V). One click counterclockwise from G is C (that's your IV). Boom, G-C-D. That's "Sweet Home Alabama," "Wagon Wheel," "Knockin' on Heaven's Door," and roughly a thousand others.</p>
+
+    <div class="callout self">
+      <strong>Key of the Day: G major</strong>
+      Answer these before opening the drawer below.
+      <ol>
+        <li>How many sharps does G major have, and which one?</li>
+        <li>Name all seven notes of the G major scale in order.</li>
+        <li>What is the relative minor of G major?</li>
+        <li>What are the I, IV, and V chords in G major?</li>
+      </ol>
+      <details>
+        <summary>Show answers</summary>
+        <p>1) One sharp, F sharp. 2) G, A, B, C, D, E, F#, (G). 3) E minor (three half steps below G, sharing the same key signature). 4) I = G, IV = C, V = D. Play them once through on piano and once on guitar, then jam a I-IV-V-I loop.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- VOCAL ROUTINE -->
+  <section class="card">
+    <h2>Vocal Routine (about 25 minutes)</h2>
+    <p>This week's focus is vowel modification as you ascend, which is the single most useful tool a baritone has for softening the first passaggio around A3 to B-flat3. The idea: as you climb into the break, you slowly reshape the vowel so the resonance stays balanced instead of the tone splatting or flipping.</p>
+
+    <h3>Part A: Warm-up (6 to 8 minutes)</h3>
+    <p>Start with appoggio breathing: hand on the low ribs, inhale slowly for 4, hiss out for 8, four rounds. Then lip trills on a 5-note scale (do-re-mi-fa-sol-fa-mi-re-do), starting on C3 and moving up chromatically to about F3. Finish with three soft "mmm" sirens from the bottom of your comfortable range up through G4 and back down. Gentle only, no push.</p>
+
+    <h3>Part B: Vowel modification ascending (about 15 minutes)</h3>
+    <p>The rule of thumb: as you climb, brighter and more open vowels want to modify toward a rounder, taller shape. "Ee" leans toward "ih," "ay" leans toward "eh," "ah" leans toward "aw," and "oh" stays "oh" but with a taller inside of the mouth. You are not swallowing the word, you are letting the space inside grow with the pitch.</p>
+    <p>Drill 1: sing a 5-note scale (do-re-mi-fa-sol) on the vowel "ee," starting on F3 and going up by half step. Around A3 (start of your primo passaggio), consciously let the "ee" round toward "ih" on the top note only. Descend the same way. Move up by half step to G3, A-flat3, A3, B-flat3, B3, C4.</p>
+    <p>Drill 2: same 5-note scale on "ah." Around the passaggio, allow "ah" to open toward "aw," and let the back of the tongue drop slightly so the vowel sounds a little rounder and darker at the top. Do not push volume.</p>
+    <p>Drill 3: 1-3-5-3-1 arpeggio on "oh," starting on F3. As you approach the top note in each arpeggio starting from A3, imagine a tall interior space (a small yawn feeling behind the vowel). This is a great one for keeping the secondo passaggio (D4 to E-flat4) navigable when we get there in future weeks.</p>
+
+    <div class="callout safe">
+      <strong>Safety</strong>
+      Hydrate before and during. Keep volume moderate, especially through the passaggio. If anything hurts, tickles, or sounds hoarse, stop for the day. Modification is a subtle nudge, not a lurch, so if you feel the vowel changing suddenly, back the pitch down a step and try again with less shift.
+    </div>
+
+    <h3>Part C: Cool-down (2 to 3 minutes)</h3>
+    <p>Descending lip trills from around G4 down to C3, then a few gentle sighs from a comfortable high note down to your speaking pitch. Rehydrate. Notice how your speaking voice feels: warm and easy is the goal, not tired.</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card">
+    <h2>Next Week</h2>
+    <p>We stitch the two clefs together into the grand staff and practice jumping between them at speed. Your bass clef work this week is the down payment on that lesson.</p>
+    <p class="nudge">You are three weeks in and already reading a second staff. That is not nothing. Keep the tiny daily reps and trust the compounding.</p>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  var examples = {
+    ex1: {
+      id: 'abc-1',
+      abc: "X:1\nT:Bass clef lines and spaces\nM:4/4\nL:1/4\nK:C bass\nG,,B,,D,F,| A,c e g|| \nw: G B D F | A C E G"
+    },
+    ex2: {
+      id: 'abc-2',
+      abc: "X:2\nT:Low to high through middle C\nM:4/4\nL:1/4\nK:C bass\nG,,C,E,G,| c e g c'||"
+    },
+    ex3: {
+      id: 'abc-3',
+      abc: "X:3\nT:Left-hand pattern in C major\nM:4/4\nL:1/8\nK:C bass\nC,G,,E,G,, C,G,,E,G,,| F,C,A,,C, G,,D,B,,D,||"
+    }
+  };
+  var visuals = {};
+  Object.keys(examples).forEach(function(key) {
+    var ex = examples[key];
+    try {
+      var v = ABCJS.renderAbc(ex.id, ex.abc, {
+        responsive: "resize",
+        add_classes: true,
+        tablature: [{ instrument: "guitar" }]
+      });
+      visuals[key] = v && v[0];
+    } catch (e) {
+      var el = document.getElementById(ex.id);
+      if (el) el.innerHTML = '<p style="color:#a44;">Notation failed to render.</p>';
+    }
+  });
+
+  document.querySelectorAll('.play-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var key = btn.getAttribute('data-play');
+      var v = visuals[key];
+      if (!v) { btn.disabled = true; btn.textContent = 'Audio unavailable in this view'; return; }
+      btn.disabled = true;
+      btn.textContent = 'Loading audio...';
+      try {
+        var synth = new ABCJS.synth.CreateSynth();
+        synth.init({ visualObj: v }).then(function() {
+          return synth.prime();
+        }).then(function() {
+          btn.disabled = false;
+          btn.textContent = 'Play example';
+          synth.start();
+        }).catch(function() {
+          btn.disabled = true;
+          btn.textContent = 'Audio unavailable in this view';
+        });
+      } catch (e) {
+        btn.disabled = true;
+        btn.textContent = 'Audio unavailable in this view';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
